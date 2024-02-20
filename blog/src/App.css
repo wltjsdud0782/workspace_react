@@ -15,6 +15,13 @@
   text-align: left;
   border-bottom: 1px solid gray;
 }
+.detail{
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #eeeeee;
+  text-align: left;
+}
+
 
 .App-logo {
   height: 40vmin;
