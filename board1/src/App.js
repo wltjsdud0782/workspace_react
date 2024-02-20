@@ -73,7 +73,7 @@ let [idx, setIdx] = useState(0);
 
       <div>
         {
-          isShow ? <Detail idx={idx} list={board_list}/> : ''
+          isShow ? <Detail i={idx} list={board_list}/> : ''
         }
       </div>
       
@@ -98,11 +98,11 @@ function List(props){
 function Detail(props){
   return(
     <div className='detail'>
-    <p>글 번호 : {props.list[props.idx].boardNo}</p>
-    <p>글 제목 : {props.list[props.idx].title}</p>
-    <p>글 내용 : {props.list[props.idx].content}</p>
-    <p>작성자 : {props.list[props.idx].writer}</p>
-    <p>작성일 : {props.list[props.idx].regDate}</p>
+    <p>글 번호 : {props.list[props.i].boardNo}</p>
+    <p>글 제목 : {props.list[props.i].title}</p>
+    <p>글 내용 : {props.list[props.i].content}</p>
+    <p>작성자 : {props.list[props.i].writer}</p>
+    <p>작성일 : {props.list[props.i].regDate}</p>
     </div>
   );
 }
