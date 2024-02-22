@@ -36,16 +36,20 @@ function App() {
       {
       title.map((e, i)=>{
         return(
-          <List key={i} title={e} likeCnt={likeCnt} idx={i} setLikeCnt={setLikeCnt} setIsShow={setIsShow}/>
+          <List key={i} title={title} likeCnt={likeCnt} idx={i} setTitle={setTitle} setLikeCnt={setLikeCnt} setIsShow={setIsShow}/>
         );
       })
       }
       
       <div>
         <input type='text' onChange={(e)=>{
-          // input 태그에 입력한 값을 출력
-          console.log(e.target.value)
+          // input 태그에 입력한 값을 저장
           setNewTitle(e.target.value)
+        }}/>
+        <input type='button' value={'저장'} onClick={(e)=>{
+          let copyTitle = [...title]
+          copyTitle.unshift(newTitle)
+          setTitle(copyTitle)
         }}/>
       </div>
 
@@ -65,16 +69,21 @@ function List(props){
     <div className='list'>
         <h4><span onClick={() =>{
           props.setIsShow(true)
-        }}>{props.title}</span>
-
+        }}>{props.title[props.idx]}</span>
+{/* 
         <span onClick={() => {
           let copyLikeCnt = [...props.likeCnt];
           copyLikeCnt[props.idx]++;
           props.setLikeCnt(copyLikeCnt);
-        }}> 👍 </span>
-        
-        {props.likeCnt[props.idx]}</h4>
+        }}> 👍 </span> {props.likeCnt[props.idx]} */}
+        </h4>
         <p>2월 19일 작성</p>
+        <button type='button' onClick={(e)=>{
+          let spliceTitle = [...props.title]
+          spliceTitle.splice(props.idx, 1)
+          props.setTitle(spliceTitle)
+        }}>삭제</button>
+
       </div>
   )
 }
