@@ -38,6 +38,14 @@ function App() {
       })
       }
       
+      <div>
+        <input type='text' onChange={(e)=>{
+          // input 태그에 입력한 값을 출력
+          console.log(e.target.value)
+        }}/>
+      </div>
+
+
       {
         isShow ? <Detail /> : ''
       }
