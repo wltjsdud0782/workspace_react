@@ -18,6 +18,9 @@ function App() {
   let [likeCnt, setLikeCnt] = useState([0,0,0]);
   let [isShow, setIsShow] = useState(false);
 
+  //input 태그에 입력한 값을 저장하고 있는 state 변수
+  let [newTitle, setNewTitle] = useState('')
+
   return (
     <div className="App">
       <div className='black-nav'>
@@ -42,6 +45,7 @@ function App() {
         <input type='text' onChange={(e)=>{
           // input 태그에 입력한 값을 출력
           console.log(e.target.value)
+          setNewTitle(e.target.value)
         }}/>
       </div>
 
